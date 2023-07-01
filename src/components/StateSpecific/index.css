@@ -1,0 +1,250 @@
+.state-specific-container {
+  background-color: #161625;
+  min-height: 88vh;
+  font-family: Roboto;
+  margin-top: 0px;
+  padding-top: 13px;
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.state-name-tested {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state-specific-state-name {
+  color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.16);
+  border-radius: 32px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+.tested {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 8px;
+}
+.tested-count {
+  color: #94a3b8;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: right;
+  margin-top: 0px;
+}
+.last-updated {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.state-cases-details-list {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+.state-cases-detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 30px;
+}
+.active-confirmed-case-type {
+  background-color: #331427;
+  border-radius: 12px;
+}
+.active-active-case-type {
+  background-color: #132240;
+  border-radius: 12px;
+}
+.active-recovered-case-type {
+  background-color: #182829;
+  border-radius: 12px;
+}
+.active-deceased-case-type {
+  background-color: #212230;
+  border-radius: 12px;
+}
+.total-case-btn {
+  border-width: 0px;
+  background-color: transparent;
+  outline: none;
+}
+.confirmed {
+  color: #ff073a;
+}
+.active {
+  color: #007bff;
+}
+.recovered {
+  color: #28a745;
+}
+.deceased {
+  color: #6c757d;
+}
+.population {
+  color: #94a3b8;
+}
+
+.state-type-text {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Roboto;
+}
+.state-cases-count {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Roboto;
+}
+
+.top-districts-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.district-item {
+  display: flex;
+  align-items: center;
+  width: 20vw;
+}
+.district-cases-count {
+  color: #94a3b8;
+  font-size: 23px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+.district-name {
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 500;
+}
+.bar-chart-mobile {
+  display: none;
+}
+.line-charts-container {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.line-chart-desktop {
+  padding-left: 50px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+.line-chart-mobile {
+  display: none;
+}
+
+.daily-spread-heading {
+  color: #cbd5e1;
+  font-size: 35px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.daily-confirmed {
+  background-color: #331427;
+}
+.daily-active {
+  background-color: #132240;
+}
+.daily-recovered {
+  background-color: #182829;
+}
+.daily-deceased {
+  background-color: #1c1c2b;
+}
+.daily-tested {
+  background-color: #230f41;
+}
+.state-specific-loader {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 575px) {
+  .line-chart-desktop {
+    display: none;
+  }
+  .line-chart-mobile {
+    display: flex;
+    margin-top: 30px;
+    border-radius: 8px;
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+  .bar-chart-desktop {
+    display: none;
+  }
+  .bar-chart-mobile {
+    display: flex;
+  }
+  .state-specific-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+  }
+  .state-specific-state-name {
+    font-size: 24px;
+    font-weight: 500;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .last-updated {
+    font-size: 13px;
+    margin-top: 0px;
+  }
+  .state-cases-details-list {
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .state-cases-detail-item {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .top {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  .top-districts-list {
+    margin-bottom: 0px;
+  }
+  .district-item {
+    width: 50%;
+    height: 45px;
+  }
+  .district-name {
+    font-size: 13px;
+  }
+  .district-cases-count {
+    font-size: 17px;
+  }
+  .daily-spread-heading {
+    font-size: 28px;
+  }
+}

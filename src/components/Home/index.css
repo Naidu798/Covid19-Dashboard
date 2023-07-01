@@ -1,0 +1,306 @@
+.home-container {
+  background-color: #161625;
+  min-height: 90vh;
+  font-family: 'Roboto';
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-top: 7vh;
+}
+.search-btn-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-search {
+  height: 55px;
+  width: 55vw;
+  background-color: #2f2f43;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  outline: none;
+  border-width: 0px;
+  color: #94a3b8;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+.search-btn {
+  background-color: #2f2f43;
+  border-width: 0px;
+  height: 55px;
+  width: 40px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  margin-bottom: 10px;
+}
+.search-icon {
+  height: 15px;
+  width: 15px;
+  color: #94a3b8;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+.results-list {
+  width: 57vw;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.box-hover:hover {
+  border: 1px solid #94a3b8;
+}
+.hr-line {
+  border-color: #64748b;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.search-results-state-and-right-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.search-state-name {
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 500;
+}
+.state-code-and-right-arrow {
+  background: rgba(28, 212, 212, 0.16);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 4px;
+  height: 35px;
+  border-width: 0px;
+}
+.search-state-code {
+  color: #facc15;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.cases-details-list {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10vh;
+}
+.cases-detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirmed {
+  color: #ff073a;
+}
+.active {
+  color: #007bff;
+}
+.recovered {
+  color: #28a745;
+}
+.deceased {
+  color: #6c757d;
+}
+.population {
+  color: #94a3b8;
+}
+
+.type-text {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Roboto;
+}
+.cases-count {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Roboto;
+}
+.state-wise-covid-cases-table {
+  border: 1px solid #475569;
+  padding-left: 0px;
+  margin-left: 0px;
+  border-radius: 8px;
+  margin-top: 10vh;
+}
+
+.table-row-headings {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f8fafc;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid #475569;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+.row-heading {
+  display: flex;
+  align-items: center;
+  margin-right: 8vw;
+}
+
+.states {
+  margin-right: 10px;
+}
+.sorting-button {
+  border-width: 0px;
+  background-color: transparent;
+  outline: none;
+}
+
+.state-cases-details-row {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.state-name {
+  color: #f8fafc;
+  width: 15vw;
+  font-weight: 600;
+  font-family: Roboto;
+  margin-right: 0px;
+}
+
+.failure-container {
+  background-color: #161625;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-image {
+  width: 25%;
+}
+.failure-heading {
+  color: #cbd5e1;
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+.failure-text {
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 500;
+  width: 430px;
+  text-align: center;
+  line-height: 25px;
+}
+.retry-btn {
+  height: 37px;
+  background-color: #2563eb;
+  width: 90px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  outline: none;
+  border-width: 0px;
+  margin-top: 10px;
+}
+
+.home-loader {
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 575px) {
+  .mobile-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #161625;
+  }
+  .search-container {
+    margin-bottom: 0px;
+    padding-top: 5vh;
+  }
+  .input-search {
+    width: 80vw;
+    font-size: 14px;
+  }
+  .cases-details-list {
+    flex-wrap: wrap;
+    margin-top: 5vh;
+  }
+  .cases-detail-item {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+  .state-wise-covid-cases {
+    overflow-x: scroll;
+  }
+  .row-heading {
+    margin-right: 6vw;
+  }
+  .table-row-heading-list {
+    width: 950px;
+    margin-top: 15px;
+  }
+  .state-wise-covid-cases-table {
+    width: 950px;
+  }
+  .table {
+    overflow: scroll;
+  }
+  .state-name {
+    width: 35vw;
+  }
+  .results-list {
+    width: 90vw;
+  }
+  .failure-heading {
+    font-size: 24px;
+  }
+  .failure-image {
+    width: 75%;
+  }
+  .failure-text {
+    width: 90vw;
+    font-size: 15px;
+  }
+}

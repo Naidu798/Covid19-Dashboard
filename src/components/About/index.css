@@ -1,0 +1,47 @@
+.about-container {
+  min-height: 85vh;
+  background-color: #161625;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 3vh;
+  font-family: Roboto;
+}
+
+.about-heading {
+  color: #f8fafc;
+  font-size: 40px;
+  font-weight: 500;
+}
+.about-updated {
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 500;
+}
+.about-text {
+  color: #e2e8f0;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.question-and-answer {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+.question {
+  color: #94a3b8;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+.answer {
+  color: #007bff;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 27px;
+}
+
+@media screen and (max-width: 575px) {
+  .about-container {
+    padding-top: 1px;
+  }
+}

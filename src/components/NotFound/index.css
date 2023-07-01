@@ -1,0 +1,51 @@
+.not-found-container {
+  background-color: #161625;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-image {
+  width: 25%;
+}
+.not-found-heading {
+  color: #cbd5e1;
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+.not-found-text {
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 500;
+  width: 430px;
+  text-align: center;
+  line-height: 25px;
+}
+.refresh-home-btn {
+  height: 37px;
+  background-color: #2563eb;
+  width: 90px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  outline: none;
+  border-width: 0px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 575px) {
+  .not-found-heading {
+    font-size: 24px;
+  }
+  .not-found-image {
+    width: 75%;
+  }
+  .not-found-text {
+    width: 90vw;
+    font-size: 15px;
+  }
+}
