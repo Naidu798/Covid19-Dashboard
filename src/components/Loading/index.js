@@ -7,7 +7,7 @@ const Loading = props => {
   const {testId} = props
 
   return (
-    <div data-testid={testId} className="loader">
+    <div testid={testId} className="loader">
       <Loader type="TailSpin" height={50} width={50} color="#007BFF" />
     </div>
   )

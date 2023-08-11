@@ -28,7 +28,7 @@ class About extends Component {
     const {faqsList} = this.state
 
     return (
-      <ul data-testid="faqsUnorderedList" className="question-and-answer">
+      <ul testid="faqsUnorderedList" className="question-and-answer">
         {faqsList.map(eachFaq => {
           const {answer, question, qno} = eachFaq
 

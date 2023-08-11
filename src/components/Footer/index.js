@@ -15,13 +15,13 @@ const Footer = () => (
       </p>
       <ul className="icons-list">
         <li>
-          <VscGithubAlt fill="#CBD5E1" size={40} />
+          <VscGithubAlt fill="#CBD5E1" size={35} />
         </li>
         <li>
-          <FiInstagram color="#CBD5E1" size={40} />
+          <FiInstagram color="#CBD5E1" size={35} />
         </li>
         <li>
-          <FaTwitter fill="#CBD5E1" size={40} />
+          <FaTwitter fill="#CBD5E1" size={35} />
         </li>
       </ul>
     </div>

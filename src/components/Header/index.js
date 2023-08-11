@@ -19,82 +19,115 @@ class Header extends Component {
   }
 
   renderMobileMenu = () => {
-    const {match} = this.props
-    const {path} = match
-
-    const activeHomeClassName = path === '/' ? 'active-nav-item' : ' '
-    const activeAboutClassName = path === '/about' ? 'active-nav-item' : ''
-
-    return (
-      <div className="mobile-menu-container">
-        <ul className="mobile-menu-items">
-          <li className="menu-item">
-            <Link to="/" className={`nav-item ${activeHomeClassName}`}>
-              Home
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/about" className={`nav-item ${activeAboutClassName}`}>
-              about
-            </Link>
-          </li>
-        </ul>
-        <button type="button" className="close-btn" onClick={this.onCloseBtn}>
-          <RiCloseCircleFill className="close-circle" size={22} />
-        </button>
-      </div>
-    )
-  }
-
-  render() {
     const {showMenu} = this.state
     const {match} = this.props
     const {path} = match
 
-    const activeHomeClassName = path === '/' ? 'active-nav-item' : ' '
-    const activeAboutClassName = path === '/about' ? 'active-nav-item' : ''
+    const activeHomeClassName = path === '/' ? 'active-nav-button' : ' '
+    const activeAboutClassName = path === '/about' ? 'active-nav-button' : ''
 
     return (
-      <div>
-        <div className="header-container">
-          <Link className="mobile-nav-link-logo" to="/">
+      <div className="mobile-menu-container">
+        <div className="logo-and-menu-button">
+          <Link to="/" className="nav-link">
             <h1 className="head-covid19-heading">
               COVID19<span className="head-india">INDIA</span>
             </h1>
           </Link>
           <button
             type="button"
-            className="menu-btn-container"
+            className="menu-button"
             onClick={this.onMenuBtn}
           >
-            <MdMenuOpen size={30} color="#ffffff" />
+            <MdMenuOpen size={36} fill="#fff" />
           </button>
-          <ul className="nav-link-items">
-            <li key={0}>
-              <Link className="nav-link" to="/">
-                <h1 className="head-covid19-heading">
-                  COVID19<span className="head-india">INDIA</span>
-                </h1>
+        </div>
+        {showMenu ? (
+          <ul className="mobile-nav-items">
+            <li key="m-nav-1">
+              <Link to="/" className="nav-link">
+                <button
+                  type="button"
+                  className={`nav-button ${activeHomeClassName}`}
+                >
+                  Home
+                </button>
               </Link>
             </li>
-            <div className="nav-items-list">
-              <li className="nav-link-item" key={1}>
-                <Link className={`nav-link ${activeHomeClassName}`} to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-link-item" key={2}>
-                <Link
-                  className={`nav-link ${activeAboutClassName}`}
-                  to="/about"
+            <li key="m-nav-2">
+              <Link to="/about" className="nav-link">
+                <button
+                  type="button"
+                  className={`nav-button ${activeAboutClassName}`}
                 >
                   About
-                </Link>
-              </li>
-            </div>
+                </button>
+              </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="close-btn"
+                onClick={this.onCloseBtn}
+              >
+                <RiCloseCircleFill size={22} fill="#fff" />
+              </button>
+            </li>
           </ul>
-        </div>
-        {showMenu ? this.renderMobileMenu() : ''}
+        ) : (
+          ''
+        )}
+      </div>
+    )
+  }
+
+  renderDesktopMenu = () => {
+    const {match} = this.props
+    const {path} = match
+
+    const activeHomeClassName = path === '/' ? 'active-nav-button' : ' '
+    const activeAboutClassName = path === '/about' ? 'active-nav-button' : ''
+
+    return (
+      <ul className="desktop-nav-items">
+        <li key="d-nav-1">
+          <Link to="/" className="nav-link">
+            <h1 className="head-covid19-heading">
+              COVID19<span className="head-india">INDIA</span>
+            </h1>
+          </Link>
+        </li>
+        <li key="d-nav-2">
+          <Link to="/" className="nav-link">
+            <button
+              type="button"
+              className={`nav-home-button nav-button ${activeHomeClassName}`}
+            >
+              Home
+            </button>
+          </Link>
+        </li>
+        <li key="d-nav-3">
+          <Link to="/about" className="nav-link">
+            <button
+              type="button"
+              className={`nav-about-button nav-button ${activeAboutClassName}`}
+            >
+              About
+            </button>
+          </Link>
+        </li>
+      </ul>
+    )
+  }
+
+  render() {
+    const {showMenu} = this.state
+
+    return (
+      <div>
+        {this.renderDesktopMenu()}
+        {this.renderMobileMenu()}
       </div>
     )
   }

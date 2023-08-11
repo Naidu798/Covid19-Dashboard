@@ -1,120 +1,106 @@
-.header-container {
-  background-color: #1e1e30;
-  height: 12vh;
-  font-family: 'Roboto';
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5vw;
-  padding-right: 7vw;
-}
-
 .head-covid19-heading {
   font-family: Bree serif;
   color: #f8fafc;
   font-size: 30px;
   margin-left: 0px;
+  margin-right: auto;
 }
 .head-india {
   color: #3b82f6;
 }
 
-.nav-link-items {
+.desktop-nav-items {
+  background-color: #1e1e30;
+  height: 12vh;
   list-style-type: none;
-  padding-left: 0-px;
+  padding-left: 0px;
   margin-left: 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100vw;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 5vw;
 }
-.nav-link-item {
-  font-style: normal;
+.nav-button {
+  border-width: 0px;
+  background-color: transparent;
+  color: #94a3b8;
+  font-size: 19px;
   font-weight: 500;
-  font-size: 16px;
-  margin-left: 15px;
-  margin-right: 15px;
+}
+.nav-home-button {
+  position: absolute;
+  left: 83%;
+  top: 5%;
+}
+.nav-about-button {
+  position: absolute;
+  left: 90%;
+  top: 5%;
+}
+.active-nav-button {
+  color: #fff;
+  font-weight: 600;
 }
 .nav-link {
   text-decoration: none;
   color: #94a3b8;
   margin-left: 0px;
 }
-
-.menu-btn-container {
-  display: none;
-}
-
 .mobile-menu-container {
   display: none;
 }
-.nav-items-list {
-  display: flex;
-  align-items: center;
-}
-.mobile-menu-items {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  padding-left: 0px;
-  margin-left: 0px;
-}
-.mobile-nav-link-logo {
-  display: none;
-  text-decoration: none;
-}
-.menu-item {
-  margin-right: 10px;
-  margin-left: 18px;
-  font-size: 17px;
-}
-.nav-item {
-  color: #94a3b8;
-  text-decoration: none;
-}
-
-.active-nav-item {
-  color: #ffffff;
-  font-size: 18px;
-}
-.close-circle {
-  margin-right: 20px;
-  color: #ffffff;
-}
-.close-btn {
-  background-color: transparent;
-  border-width: 0px;
-  outline: none;
-}
-.loader {
-  height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 @media screen and (max-width: 575px) {
-  .website-logo {
-    width: 130px;
-  }
-  .header-container {
-    padding-left: 0px;
-    padding-right: 15px;
-  }
-  .nav-link-items {
+  .desktop-nav-items {
     display: none;
   }
-  .menu-btn-container {
+  .mobile-menu-container {
     display: flex;
-    background-color: transparent;
-    border-width: 0px;
-    outline: none;
-  }
-  .mobile-nav-link-logo {
-    display: flex;
+    flex-direction: column;
+    background-color: #1e1e30;
+    font-family: 'Roboto';
+    margin-bottom: 0px;
   }
   .head-covid19-heading {
-    font-size: 24px;
-    margin-left: 17px;
+    font-size: 26px;
+  }
+  .nav-button {
+    font-size: 18px;
+    font-family: Roboto;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .logo-and-menu-button {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e1e30;
+    align-items: center;
+    width: 100%;
+    height: 14vh;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .menu-button {
+    background-color: transparent;
+    border-width: 0px;
+    margin-top: 5px;
+  }
+  .mobile-nav-items {
+    background-color: #161625;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 15px;
+    width: 100vw;
+    margin-bottom: 10px;
+  }
+  .close-btn {
+    border-width: 0px;
+    background-color: transparent;
+    margin-left: 150px;
   }
 }

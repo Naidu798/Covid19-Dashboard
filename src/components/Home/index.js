@@ -217,6 +217,7 @@ class Home extends Component {
       updatedStatesList.map(eachState => {
         const {stateName, stateCode} = eachState
         const stateDetails = data[stateCode].total
+        const statePopulation = data[stateCode].meta
 
         const updatedStateDetails = {
           stateName,
@@ -227,10 +228,7 @@ class Home extends Component {
           active:
             stateDetails.confirmed -
             (stateDetails.recovered + stateDetails.deceased),
-          population:
-            stateDetails.confirmed +
-            stateDetails.recovered +
-            stateDetails.deceased,
+          population: statePopulation.population,
         }
         stateWiseTotalCasesList.push(updatedStateDetails)
 
@@ -259,7 +257,7 @@ class Home extends Component {
       const lowerStateName = stateName.toLowerCase()
       const searchValue = searchInput.toLowerCase()
 
-      if (lowerStateName.startsWith(searchValue)) {
+      if (lowerStateName.includes(searchValue)) {
         return eachState
       }
       return null
@@ -280,17 +278,13 @@ class Home extends Component {
           />
         </div>
         {filteredSearchResults.length !== 36 ? (
-          <ul data-testid="searchResultsUnorderedList" className="results-list">
+          <ul testid="searchResultsUnorderedList" className="results-list">
             {filteredSearchResults.map(eachState => {
               const {stateName, stateCode} = eachState
 
               return (
-                <Link
-                  to={`state/${stateCode}`}
-                  className="nav-link"
-                  key={stateCode}
-                >
-                  <li className="search-result-item box-hover">
+                <Link to={`state/${stateCode}`} className="nav-link">
+                  <li className="search-result-item box-hover" key={stateCode}>
                     <div className="search-results-state-and-right-arrow">
                       <p className="search-state-name">{stateName}</p>
                       <div type="button" className="state-code-and-right-arrow">
@@ -322,10 +316,7 @@ class Home extends Component {
 
     return (
       <div className="cases-details-list">
-        <div
-          className="cases-detail-item"
-          data-testid="countryWideConfirmedCases"
-        >
+        <div className="cases-detail-item" testid="countryWideConfirmedCases">
           <p className="confirmed type-text">Confirmed</p>
           <img
             src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647856/check-mark_1_gyahrd.png"
@@ -334,7 +325,7 @@ class Home extends Component {
           />
           <p className="cases-count confirmed">{confirmedCases}</p>
         </div>
-        <div className="cases-detail-item" data-testid="countryWideActiveCases">
+        <div className="cases-detail-item" testid="countryWideActiveCases">
           <p className="type-text active">Active</p>
           <img
             src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647915/protection_1_ainxui.png"
@@ -343,10 +334,7 @@ class Home extends Component {
           />
           <p className="cases-count active">{activeCases}</p>
         </div>
-        <div
-          className="cases-detail-item"
-          data-testid="countryWideRecoveredCases"
-        >
+        <div className="cases-detail-item" testid="countryWideRecoveredCases">
           <p className="type-text recovered">Recovered</p>
           <img
             src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1685943571/recovered_1_tolyoa.png"
@@ -355,10 +343,7 @@ class Home extends Component {
           />
           <p className="cases-count recovered">{recoveredCases}</p>
         </div>
-        <div
-          className="cases-detail-item"
-          data-testid="countryWideDeceasedCases"
-        >
+        <div className="cases-detail-item" testid="countryWideDeceasedCases">
           <p className="type-text deceased">Deceased</p>
           <img
             src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647897/Outline_nzzgj7.png"
@@ -393,42 +378,37 @@ class Home extends Component {
     const {stateWiseCovidCasesTableData} = this.state
 
     return (
-      <div className="table">
-        <ul
-          className="state-wise-covid-cases-table"
-          data-testid="stateWiseCovidDataTable"
-        >
-          <li className="table-row-headings">
-            <div className="row-heading">
-              <p className="states">States/UT</p>
-              <button
-                type="button"
-                className="sorting-button"
-                data-testid="ascendingSort"
-                onClick={this.onAscBtn}
-              >
-                <FcGenericSortingAsc fill="#94A3B8" size={20} />
-              </button>
-              <button
-                type="button"
-                className="sorting-button"
-                data-testid="descendingSort"
-                onClick={this.onDscBtn}
-              >
-                <FcGenericSortingDesc fill="#94A3B8" size={20} />
-              </button>
-            </div>
-            <p className="table-column-case-type">Confirmed</p>
-            <p className="table-column-case-type">Active</p>
-            <p className="table-column-case-type">Recovered</p>
-            <p className="table-column-case-type">Deceased</p>
-            <p className="table-column-case-type">Population</p>
-          </li>
-
+      <div testid="stateWiseCovidDataTable" className="covid-cases-table">
+        <div className="table-row-headings">
+          <div className="row-heading">
+            <p className="states">States/UT</p>
+            <button
+              type="button"
+              className="sorting-button"
+              testid="ascendingSort"
+              onClick={this.onAscBtn}
+            >
+              <FcGenericSortingAsc fill="#94A3B8" size={20} />
+            </button>
+            <button
+              type="button"
+              className="sorting-button"
+              testid="descendingSort"
+              onClick={this.onDscBtn}
+            >
+              <FcGenericSortingDesc fill="#94A3B8" size={20} />
+            </button>
+          </div>
+          <p className="table-column-case-type">Confirmed</p>
+          <p className="table-column-case-type">Active</p>
+          <p className="table-column-case-type">Recovered</p>
+          <p className="table-column-case-type">Deceased</p>
+          <p className="table-column-case-type">Population</p>
+        </div>
+        <ul className="state-wise-covid-cases-table">
           {stateWiseCovidCasesTableData.map(eachState => {
             const {
               stateName,
-              stateCode,
               confirmed,
               recovered,
               active,
@@ -437,7 +417,7 @@ class Home extends Component {
             } = eachState
 
             return (
-              <li className="state-cases-details-row" key={stateCode}>
+              <li className="state-cases-details-row" key={stateName}>
                 <p className="state-name">{stateName}</p>
                 <p className="confirmed">{confirmed}</p>
                 <p className="active">{active}</p>
@@ -498,7 +478,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-route">
         <Header />
         {this.renderResult()}
       </div>

@@ -1,3 +1,7 @@
+.home-route {
+  background-color: #161625;
+}
+
 .home-container {
   background-color: #161625;
   min-height: 90vh;
@@ -142,44 +146,9 @@
   border: 1px solid #475569;
   padding-left: 0px;
   margin-left: 0px;
-  border-radius: 8px;
-  margin-top: 10vh;
-}
-
-.table-row-headings {
-  list-style-type: none;
-  margin-left: 0px;
-  padding-left: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #f8fafc;
-  font-weight: 600;
-  font-size: 16px;
-  border: 1px solid #475569;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 0px;
-}
-
-.row-heading {
-  display: flex;
-  align-items: center;
-  margin-right: 8vw;
-}
-
-.states {
-  margin-right: 10px;
-}
-.sorting-button {
-  border-width: 0px;
-  background-color: transparent;
-  outline: none;
+  margin-top: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .state-cases-details-row {
@@ -194,6 +163,42 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.table-row-headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f8fafc;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid #475569;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: 8vh;
+}
+
+.row-heading {
+  display: flex;
+  align-items: center;
+  margin-right: 8vw;
+  margin-bottom: 0px;
+}
+
+.states {
+  margin-right: 10px;
+}
+.sorting-button {
+  border-width: 0px;
+  background-color: transparent;
+  outline: none;
+}
+
 .state-name {
   color: #f8fafc;
   width: 15vw;
@@ -257,7 +262,7 @@
   }
   .search-container {
     margin-bottom: 0px;
-    padding-top: 5vh;
+    padding-top: 3vh;
   }
   .input-search {
     width: 80vw;
@@ -265,7 +270,7 @@
   }
   .cases-details-list {
     flex-wrap: wrap;
-    margin-top: 5vh;
+    margin-top: 2vh;
   }
   .cases-detail-item {
     width: 45%;
@@ -277,15 +282,17 @@
   .row-heading {
     margin-right: 6vw;
   }
-  .table-row-heading-list {
+  .table-row-headings {
     width: 950px;
-    margin-top: 15px;
+    margin-top: 3vh;
   }
   .state-wise-covid-cases-table {
     width: 950px;
+    margin-top: 0px;
   }
-  .table {
+  .covid-cases-table {
     overflow: scroll;
+    margin-top: 0px;
   }
   .state-name {
     width: 35vw;

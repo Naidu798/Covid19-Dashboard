@@ -462,8 +462,7 @@ class StateSpecific extends Component {
         deceased: data[id].total.deceased,
         active:
           data[id].total.confirmed -
-          data[id].total.recovered +
-          data[id].total.deceased,
+          (data[id].total.recovered + data[id].total.deceased),
       },
       districtWiseCasesTypesSortedList: casesTypes,
       isLoading: false,
@@ -506,88 +505,68 @@ class StateSpecific extends Component {
         : ''
 
     return (
-      <div className="state-cases-details-list">
-        <div
-          data-testid="stateSpecificConfirmedCasesContainer"
+      <ul className="state-cases-details-list">
+        <li
+          testid="stateSpecificConfirmedCasesContainer"
           className={`state-cases-detail-item ${activeConfirmed}`}
+          onClick={this.onTopConfirmed}
         >
-          <button
-            type="button"
-            onClick={this.onTopConfirmed}
-            className="total-case-btn"
-          >
-            <p className="confirmed state-type-text">Confirmed</p>
-            <img
-              src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647856/check-mark_1_gyahrd.png"
-              alt="state specific confirmed cases pic"
-              className="state-case-type-icon"
-            />
-            <p className="state-cases-count confirmed">
-              {stateTotalCasesList.confirmed}
-            </p>
-          </button>
-        </div>
-        <div
-          data-testid="stateSpecificActiveCasesContainer"
+          <p className="confirmed state-type-text">Confirmed</p>
+          <img
+            src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647856/check-mark_1_gyahrd.png"
+            alt="state specific confirmed cases pic"
+            className="state-case-type-icon"
+          />
+          <p className="state-cases-count confirmed">
+            {stateTotalCasesList.confirmed}
+          </p>
+        </li>
+        <li
+          testid="stateSpecificActiveCasesContainer"
           className={`state-cases-detail-item ${activeActive}`}
+          onClick={this.onTopActive}
         >
-          <button
-            type="button"
-            onClick={this.onTopActive}
-            className="total-case-btn"
-          >
-            <p className="state-type-text active">Active</p>
-            <img
-              src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647915/protection_1_ainxui.png"
-              alt="state specific active cases pic"
-              className="state-case-type-icon"
-            />
-            <p className="state-cases-count active">
-              {stateTotalCasesList.active}
-            </p>
-          </button>
-        </div>
-        <div
-          data-testid="stateSpecificRecoveredCasesContainer"
+          <p className="state-type-text active">Active</p>
+          <img
+            src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647915/protection_1_ainxui.png"
+            alt="state specific active cases pic"
+            className="state-case-type-icon"
+          />
+          <p className="state-cases-count active">
+            {stateTotalCasesList.active}
+          </p>
+        </li>
+        <li
+          testid="stateSpecificRecoveredCasesContainer"
           className={`state-cases-detail-item ${activeRecovered}`}
+          onClick={this.onTopRecovered}
         >
-          <button
-            type="button"
-            onClick={this.onTopRecovered}
-            className="total-case-btn"
-          >
-            <p className="state-type-text recovered">Recovered</p>
-            <img
-              src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1685943571/recovered_1_tolyoa.png"
-              alt="state specific recovered cases pic"
-              className="state-case-type-icon"
-            />
-            <p className="state-cases-count recovered">
-              {stateTotalCasesList.recovered}
-            </p>
-          </button>
-        </div>
-        <div
-          data-testid="stateSpecificDeceasedCasesContainer"
+          <p className="state-type-text recovered">Recovered</p>
+          <img
+            src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1685943571/recovered_1_tolyoa.png"
+            alt="state specific recovered cases pic"
+            className="state-case-type-icon"
+          />
+          <p className="state-cases-count recovered">
+            {stateTotalCasesList.recovered}
+          </p>
+        </li>
+        <li
+          testid="stateSpecificDeceasedCasesContainer"
           className={`state-cases-detail-item ${activeDeceased}`}
+          onClick={this.onTopDeceased}
         >
-          <button
-            type="button"
-            onClick={this.onTopDeceased}
-            className="total-case-btn"
-          >
-            <p className="type-text deceased">Deceased</p>
-            <img
-              src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647897/Outline_nzzgj7.png"
-              alt="state specific deceased cases pic"
-              className="state-case-type-icon"
-            />
-            <p className="state-cases-count deceased">
-              {stateTotalCasesList.deceased}
-            </p>
-          </button>
-        </div>
-      </div>
+          <p className="type-text deceased">Deceased</p>
+          <img
+            src="https://res.cloudinary.com/dr0j4gxol/image/upload/v1684647897/Outline_nzzgj7.png"
+            alt="state specific deceased cases pic"
+            className="state-case-type-icon"
+          />
+          <p className="state-cases-count deceased">
+            {stateTotalCasesList.deceased}
+          </p>
+        </li>
+      </ul>
     )
   }
 
@@ -602,82 +581,81 @@ class StateSpecific extends Component {
     const {color, listType, type} = activeCaseTypeDetails
 
     return (
-      <div>
+      <>
         <h1 className={`${type} top`}>Top Districts</h1>
-        <ul
-          className="top-districts-list"
-          data-testid="topDistrictsUnorderedList"
-        >
-          {districtWiseCasesTypesSortedList[listType].map(eachCase => {
-            const casesCount = eachCase[0]
-            const districtName = eachCase[1]
+        <div>
+          <ul testid="topDistrictsUnorderedList" className="top-districts-list">
+            {districtWiseCasesTypesSortedList[listType].map(eachCase => {
+              const casesCount = eachCase[0]
+              const districtName = eachCase[1]
 
-            return (
-              <li className="district-item" key={districtName}>
-                <p className="district-cases-count">{casesCount}</p>
-                <p className="district-name">{districtName}</p>
-              </li>
-            )
-          })}
-        </ul>
-        <BarChart
-          data={dateWiseBarChartCasesTypes[type]}
-          className="bar-chart-desktop"
-          width={1200}
-          height={450}
-          barCategoryGap="23%"
-          margin={{top: 30, right: 15, bottom: 30, left: 15}}
-        >
-          <XAxis
-            dataKey="date"
-            axisLine={false}
-            tickLine={false}
-            tickMargin={10}
-            tick={{fill: color, fontSize: 15}}
-          />
-          <Tooltip />
-          <Bar
-            dataKey="count"
-            fill={color}
-            className="bar"
-            label={{
-              position: 'top',
-              fill: color,
-              fontSize: 12,
-            }}
-            radius={[8, 8, 0, 0]}
-          />
-        </BarChart>
+              return (
+                <li className="district-item" key={districtName}>
+                  <p className="district-cases-count">{casesCount}</p>
+                  <p className="district-name">{districtName}</p>
+                </li>
+              )
+            })}
+          </ul>
+          <BarChart
+            data={dateWiseBarChartCasesTypes[type]}
+            className="bar-chart-desktop"
+            width={1200}
+            height={450}
+            barCategoryGap="23%"
+            margin={{top: 30, right: 15, bottom: 30, left: 15}}
+          >
+            <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tickMargin={10}
+              tick={{fill: color, fontSize: 15}}
+            />
+            <Tooltip />
+            <Bar
+              dataKey="count"
+              fill={color}
+              className="bar"
+              label={{
+                position: 'top',
+                fill: color,
+                fontSize: 12,
+              }}
+              radius={[8, 8, 0, 0]}
+            />
+          </BarChart>
 
-        <BarChart
-          data={dateWiseBarChartCasesTypes[type]}
-          className="bar-chart-mobile"
-          width={330}
-          height={250}
-          barCategoryGap="10%"
-          margin={{top: 30}}
-        >
-          <XAxis
-            dataKey="date"
-            axisLine={false}
-            tickLine={false}
-            tickMargin={10}
-            tick={{fill: color, fontSize: 8}}
-          />
-          <Tooltip />
-          <Bar
-            dataKey="count"
-            fill={color}
-            className="bar"
-            label={{
-              position: 'top',
-              fill: color,
-              fontSize: 4,
-            }}
-            radius={[4, 4, 0, 0]}
-          />
-        </BarChart>
-      </div>
+          <BarChart
+            data={dateWiseBarChartCasesTypes[type]}
+            className="bar-chart-mobile"
+            width={330}
+            height={250}
+            barCategoryGap="10%"
+            margin={{top: 30}}
+          >
+            <XAxis
+              dataKey="date"
+              axisLine={false}
+              tickLine={false}
+              tickMargin={10}
+              tick={{fill: color, fontSize: 8}}
+            />
+            <Tooltip />
+            <Bar
+              dataKey="count"
+              fill={color}
+              className="bar"
+              label={{
+                position: 'top',
+                fill: color,
+                fontSize: 4,
+              }}
+              radius={[4, 4, 0, 0]}
+            />
+          </BarChart>
+        </div>
+      </>
     )
   }
 
@@ -687,7 +665,7 @@ class StateSpecific extends Component {
     return (
       <div>
         <h1 className="daily-spread-heading">Daily Spread Trends</h1>
-        <ul className="line-charts-container" data-testid="lineChartsContainer">
+        <ul className="line-charts-container" testid="lineChartsContainer">
           {covidDailySpreadConstants.map(eachType => {
             const {color, className, type, typeCountValue} = eachType
 
